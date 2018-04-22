@@ -1,1 +1,1 @@
-web: python app.py 5000
+web: python app.py
