@@ -42,7 +42,7 @@ def callback():
 def handle_message(event):
     id = event.message.text
 
-    res = requests.post(url,headers={'Content-Type':'application/x-www-form-urlencoded'}, data='idno='+id, 'Connection':'close')
+    res = requests.post(url, headers={'Content-Type':'application/x-www-form-urlencoded', 'Connection':'close'}, data='idno='+id)
     res.encoding = 'big5' #轉換enconding, 預設為utf8
     soup = BeautifulSoup(res.text, 'lxml')
     data = soup.findAll('table')[1].findAll('td', {'class':'trB'})
