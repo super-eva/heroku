@@ -13,11 +13,14 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('avIDjwy7hrp4tlLjEbnOTTT2XF5jhApx96zUN2sRDtLl5w5u1PZ+iJ5FXCDX53Mu9vEpg7Eq0eV3Pl8m4v5MnD8P4TKjjlOClf/VVShXzEqtJsspCDpOMNehiOyJePPRXlhpyEibfoX/b5zu8a3k8gdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('9f530fcd5e1273891a2541d873387272')
+secret = os.environ.get('Secret')
+token = os.environ.get('Token')
+
+line_bot_api = LineBotApi(token)
+handler = WebhookHandler(secret)
+
 url = 'http://cdcb.judicial.gov.tw/abbs/wkw/WHD9A02.jsp'
 
 @app.route("/callback", methods=['POST'])
