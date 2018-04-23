@@ -1,1 +1,1 @@
-web: python echo.py
+web: python debt.py
